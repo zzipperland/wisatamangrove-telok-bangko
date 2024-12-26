@@ -331,10 +331,10 @@ footer p {
 @media (max-width: 768px) {
     .sidebar {
         width: 60px; 
-        height: 35vh; 
+        height: 300px; 
         overflow: hidden; 
         position: fixed; 
-        top: 50%; 
+        top: 25%; 
         left: 0; 
         transform: translateY(-50%); 
         z-index: 1000;
