@@ -12,6 +12,30 @@ document.querySelectorAll('.sidebar a').forEach(link => {
     });
 });
 
+document.addEventListener("DOMContentLoaded", function() {
+    const fadeElements = document.querySelectorAll('.content .fade-in');
+
+    const checkVisibility = () => {
+        fadeElements.forEach(element => {
+            const elementTop = element.getBoundingClientRect().top;
+            const elementBottom = element.getBoundingClientRect().bottom;
+
+            // Jika elemen berada di dalam viewport
+            if (elementTop < window.innerHeight && elementBottom > 0) {
+                element.classList.add('visible');
+            } else {
+                element.classList.remove('visible');
+            }
+        });
+    };
+
+    // Panggil fungsi saat halaman di-scroll
+    window.addEventListener('scroll', checkVisibility);
+
+    // Panggil fungsi saat halaman pertama kali dimuat
+    checkVisibility();
+});
+
 function sendWhatsAppMessage(event) {
     event.preventDefault();
 
